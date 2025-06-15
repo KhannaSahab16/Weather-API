@@ -55,24 +55,24 @@ weather-api-app/
 
 ## 🌐 How to Run Locally
 
-1. **Clone the repo**  
+### Clone the repo 
 
-git clone https://github.com/yourusername/weather-api-app.git
-cd weather-api-app
+git clone https://github.com/KhannaSahab16/Weather-API.git
+cd Weather-API
 
-2. Install dependencies
+### Install dependencies
 
 npm install
 
-3. Add your API key in .env
+### Add your API key in .env
 
 OPENWEATHER_API_KEY=your_api_key_here
 
-4. Start the server
+### Start the server
 
 node index.js
 
-📦 API Endpoint
+## 📦 API Endpoint
 
 GET /weather?city=CityName
 
@@ -89,7 +89,7 @@ GET /weather?city=CityName
     }
 You can find the Postman request screenshots inside the screenshots/ folder as proof of working endpoints.
 
-⚠️ Error Handling
+## ⚠️ Error Handling
 
 Returns clean JSON error messages for:
 Missing city parameter
@@ -97,7 +97,7 @@ Invalid city names
 Network/API issues
 Console logs errors for debugging
 
-🧠 Learnings & Highlights
+## 🧠 Learnings & Highlights
 
 Built a backend from scratch using Express.js
 Worked with third-party APIs using Axios
@@ -105,7 +105,7 @@ Applied middleware for request logging
 Secured API keys with .env
 Tested APIs thoroughly using Postman
 
-✨ Future Improvements
+## ✨ Future Improvements
 
 Add a frontend interface (HTML + JS)
 Extend API to show 5-day forecast
