@@ -34,7 +34,7 @@ Built as part of a backend internship project with a focus on:
 ---
 
 ## 🛠️ Project Structure
-<pre>
+
 weather-api-app/
 │
 ├── index.js # Main backend file
@@ -50,7 +50,7 @@ weather-api-app/
 ├── package.json
 ├── package-lock.json
 ├── node_modules   (ignored in Git)
-<pre>
+
 
 
 ## 🌐 How to Run Locally
