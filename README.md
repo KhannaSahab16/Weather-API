@@ -34,7 +34,7 @@ Built as part of a backend internship project with a focus on:
 ---
 
 ## 🛠️ Project Structure
-'''
+```
 weather-api-app/
 │
 ├── index.js # Main backend file
@@ -50,7 +50,7 @@ weather-api-app/
 ├── package.json
 ├── package-lock.json
 ├── node_modules   (ignored in Git)
-'''
+```
 
 ---
 
@@ -58,20 +58,20 @@ weather-api-app/
 
 ### Clone the repo 
 
-git clone https://github.com/KhannaSahab16/Weather-API.git
-cd Weather-API
+- git clone https://github.com/KhannaSahab16/Weather-API.git
+- cd Weather-API
 
 ### Install dependencies
 
-npm install
+- npm install
 
 ### Add your API key in .env
 
-OPENWEATHER_API_KEY=your_api_key_here
+- OPENWEATHER_API_KEY=your_api_key_here
 
 ### Start the server
 
-node index.js
+- node index.js
 
 ---
 
@@ -91,7 +91,9 @@ GET /weather?city=CityName
   "windSpeed": "5.2 km/h"
     }
 -You can find the Postman request screenshots inside the screenshots/ folder as proof of working endpoints.
+
 ---
+
 ## ⚠️ Error Handling
 
 -Returns clean JSON error messages for:
@@ -99,7 +101,9 @@ GET /weather?city=CityName
 -Invalid city names
 -Network/API issues
 -Console logs errors for debugging
+
 ---
+
 ## 🧠 Learnings & Highlights
 
 -Built a backend from scratch using Express.js
@@ -107,7 +111,9 @@ GET /weather?city=CityName
 -Applied middleware for request logging
 -Secured API keys with .env
 -Tested APIs thoroughly using Postman
+
 ---
+
 ## ✨ Future Improvements
 
 -Add a frontend interface (HTML + JS)
