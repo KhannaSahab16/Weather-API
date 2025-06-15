@@ -34,7 +34,7 @@ Built as part of a backend internship project with a focus on:
 ---
 
 ## 🛠️ Project Structure
-
+'''
 weather-api-app/
 │
 ├── index.js # Main backend file
@@ -50,8 +50,9 @@ weather-api-app/
 ├── package.json
 ├── package-lock.json
 ├── node_modules   (ignored in Git)
+'''
 
-
+---
 
 ## 🌐 How to Run Locally
 
@@ -72,6 +73,8 @@ OPENWEATHER_API_KEY=your_api_key_here
 
 node index.js
 
+---
+
 ## 📦 API Endpoint
 
 GET /weather?city=CityName
@@ -87,30 +90,30 @@ GET /weather?city=CityName
   "humidity": "50%",
   "windSpeed": "5.2 km/h"
     }
-You can find the Postman request screenshots inside the screenshots/ folder as proof of working endpoints.
-
+-You can find the Postman request screenshots inside the screenshots/ folder as proof of working endpoints.
+---
 ## ⚠️ Error Handling
 
-Returns clean JSON error messages for:
-Missing city parameter
-Invalid city names
-Network/API issues
-Console logs errors for debugging
-
+-Returns clean JSON error messages for:
+-Missing city parameter
+-Invalid city names
+-Network/API issues
+-Console logs errors for debugging
+---
 ## 🧠 Learnings & Highlights
 
-Built a backend from scratch using Express.js
-Worked with third-party APIs using Axios
-Applied middleware for request logging
-Secured API keys with .env
-Tested APIs thoroughly using Postman
-
+-Built a backend from scratch using Express.js
+-Worked with third-party APIs using Axios
+-Applied middleware for request logging
+-Secured API keys with .env
+-Tested APIs thoroughly using Postman
+---
 ## ✨ Future Improvements
 
-Add a frontend interface (HTML + JS)
-Extend API to show 5-day forecast
-Add location autocomplete via Map APIs
-Rate limiting, caching, and test coverage
+-Add a frontend interface (HTML + JS)
+-Extend API to show 5-day forecast
+-Add location autocomplete via Map APIs
+-Rate limiting, caching, and test coverage
 
 Author 
 Mehul Khanna
