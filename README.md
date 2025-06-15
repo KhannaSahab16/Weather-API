@@ -34,7 +34,7 @@ Built as part of a backend internship project with a focus on:
 ---
 
 ## 🛠️ Project Structure
-
+<pre>
 weather-api-app/
 │
 ├── index.js # Main backend file
@@ -50,6 +50,7 @@ weather-api-app/
 ├── package.json
 ├── package-lock.json
 ├── node_modules   (ignored in Git)
+<pre>
 
 
 ---
@@ -57,7 +58,7 @@ weather-api-app/
 ## 🌐 How to Run Locally
 
 1. **Clone the repo**  
-```bash
+
 git clone https://github.com/yourusername/weather-api-app.git
 cd weather-api-app
 
