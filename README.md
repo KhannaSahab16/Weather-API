@@ -53,8 +53,6 @@ weather-api-app/
 <pre>
 
 
----
-
 ## 🌐 How to Run Locally
 
 1. **Clone the repo**  
