@@ -34,7 +34,7 @@ Built as part of a backend internship project with a focus on:
 ---
 
 ## 🛠️ Project Structure
-<pre>
+```
 weather-api-app/
 │
 ├── index.js # Main backend file
@@ -50,31 +50,32 @@ weather-api-app/
 ├── package.json
 ├── package-lock.json
 ├── node_modules   (ignored in Git)
-<pre>
-
+```
 
 ---
 
 ## 🌐 How to Run Locally
 
-1. **Clone the repo**  
+### Clone the repo 
 
-git clone https://github.com/yourusername/weather-api-app.git
-cd weather-api-app
+- git clone https://github.com/KhannaSahab16/Weather-API.git
+- cd Weather-API
 
-2. Install dependencies
+### Install dependencies
 
-npm install
+- npm install
 
-3. Add your API key in .env
+### Add your API key in .env
 
-OPENWEATHER_API_KEY=your_api_key_here
+- OPENWEATHER_API_KEY=your_api_key_here
 
-4. Start the server
+### Start the server
 
-node index.js
+- node index.js
 
-📦 API Endpoint
+---
+
+## 📦 API Endpoint
 
 GET /weather?city=CityName
 
@@ -89,30 +90,37 @@ GET /weather?city=CityName
   "humidity": "50%",
   "windSpeed": "5.2 km/h"
     }
-You can find the Postman request screenshots inside the screenshots/ folder as proof of working endpoints.
+    
+- You can find the Postman request screenshots inside the screenshots/ folder as proof of working endpoints.
 
-⚠️ Error Handling
+---
 
-Returns clean JSON error messages for:
-Missing city parameter
-Invalid city names
-Network/API issues
-Console logs errors for debugging
+## ⚠️ Error Handling
 
-🧠 Learnings & Highlights
+- Returns clean JSON error messages for:
+- Missing city parameter
+- Invalid city names
+- Network/API issues
+- Console logs errors for debugging
 
-Built a backend from scratch using Express.js
-Worked with third-party APIs using Axios
-Applied middleware for request logging
-Secured API keys with .env
-Tested APIs thoroughly using Postman
+---
 
-✨ Future Improvements
+## 🧠 Learnings & Highlights
 
-Add a frontend interface (HTML + JS)
-Extend API to show 5-day forecast
-Add location autocomplete via Map APIs
-Rate limiting, caching, and test coverage
+- Built a backend from scratch using Express.js
+- Worked with third-party APIs using Axios
+- Applied middleware for request logging
+- Secured API keys with .env
+- Tested APIs thoroughly using Postman
+
+---
+
+## ✨ Future Improvements
+
+- Add a frontend interface (HTML + JS)
+- Extend API to show 5-day forecast
+- Add location autocomplete via Map APIs
+- Rate limiting, caching, and test coverage
 
 Author 
 Mehul Khanna
