@@ -90,36 +90,37 @@ GET /weather?city=CityName
   "humidity": "50%",
   "windSpeed": "5.2 km/h"
     }
--You can find the Postman request screenshots inside the screenshots/ folder as proof of working endpoints.
+    
+- You can find the Postman request screenshots inside the screenshots/ folder as proof of working endpoints.
 
 ---
 
 ## ⚠️ Error Handling
 
--Returns clean JSON error messages for:
--Missing city parameter
--Invalid city names
--Network/API issues
--Console logs errors for debugging
+- Returns clean JSON error messages for:
+- Missing city parameter
+- Invalid city names
+- Network/API issues
+- Console logs errors for debugging
 
 ---
 
 ## 🧠 Learnings & Highlights
 
--Built a backend from scratch using Express.js
--Worked with third-party APIs using Axios
--Applied middleware for request logging
--Secured API keys with .env
--Tested APIs thoroughly using Postman
+- Built a backend from scratch using Express.js
+- Worked with third-party APIs using Axios
+- Applied middleware for request logging
+- Secured API keys with .env
+- Tested APIs thoroughly using Postman
 
 ---
 
 ## ✨ Future Improvements
 
--Add a frontend interface (HTML + JS)
--Extend API to show 5-day forecast
--Add location autocomplete via Map APIs
--Rate limiting, caching, and test coverage
+- Add a frontend interface (HTML + JS)
+- Extend API to show 5-day forecast
+- Add location autocomplete via Map APIs
+- Rate limiting, caching, and test coverage
 
 Author 
 Mehul Khanna
