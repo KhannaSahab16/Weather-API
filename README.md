@@ -1,4 +1,4 @@
-# 🌦️ Weather API Project
+# 🌦️  Weatherify Backend Project
 
 A clean and beginner-friendly **Node.js + Express.js** backend project that fetches **live weather data** from the OpenWeatherMap API and returns it in a user-friendly format.
 
