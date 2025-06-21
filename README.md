@@ -125,6 +125,7 @@ GET /weather?city=CityName
     GET http://localhost:3000/weather?city=Delhi
 
 ✅ Example response:
+<pre>
     {
   "city": "Delhi",
   "temperature": "34°C",
@@ -132,6 +133,8 @@ GET /weather?city=CityName
   "humidity": "50%",
   "windSpeed": "5.2 km/h"
     }
+</pre>
+    
     
 - You can find the Postman request screenshots inside the screenshots/ folder as proof of working endpoints.
 
@@ -170,5 +173,7 @@ GET /weather?city=CityName
 
 👨‍💻 Author
 > Mehul Khanna – @KhannaSahab16
+
 > Built during backend internship (2025)
+
 > 💬 Feel free to fork, test, or contribute!
