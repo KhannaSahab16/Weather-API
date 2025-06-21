@@ -1,33 +1,72 @@
-# 🌦️  Weatherify Backend Project
+# 🌦️ Weatherify Backend — Node.js Weather API
 
-A clean and beginner-friendly **Node.js + Express.js** backend project that fetches **live weather data** from the OpenWeatherMap API and returns it in a user-friendly format.
+A production-ready, fully documented **Express.js** backend that delivers **live weather data** via the [OpenWeatherMap API](https://openweathermap.org/api). Built as part of a backend internship — now upgraded with features like **geo search**, **forecast**, **unit switching**, **rate limiting**, **caching**, and **security best practices**.
 
-Built as part of a backend internship project with a focus on:
-- API integration
-- Error handling
-- Logging middleware
-- Environment configuration
-- Clean backend structure
+> ✅ Hosted Live at: [weatherify-6bjf.onrender.com](https://weatherify-6bjf.onrender.com)  
+> 🔑 API secured with `.env` secrets & rate-limited for public use.
 
 ---
 
-## 🚀 Features
+## 🚀 Core Features
 
-✅ Fetch current weather by city name  
-✅ Real-time API call to [OpenWeatherMap](https://openweathermap.org/api) 
-✅ Easily extensible for forecast data & more 🌤️ 
-✅ Proper error handling (e.g., empty/misspelled cities)  
-✅ Console-based request logging middleware  
-✅ Uses `.env` file for secure API key storage  
-✅ Tested using **Postman** 
+✅ **Get Current Weather by City Name**  
+✅ **Search by Coordinates** (`lat`, `lon`)  
+✅ **Get 5-Day Forecast** (grouped daily)  
+✅ **Choose Units:** Metric or Imperial  
+✅ **Rate Limiting** (100 req/hr globally, 20 req/10min for forecast)  
+✅ **Caching Layer** (in-memory, 10 min TTL)  
+✅ **Security Headers via Helmet**  
+✅ **Rich Logs with Morgan**  
+✅ **.env-based Config** (with public `.env.example`)  
+✅ **Clean Modular Codebase**
 
 ---
+
+## 📦 Live Endpoints
+
+### 🔹 Current Weather by City
+
+GET /weather?city=Delhi&units=metric
+
+### 🔹 Weather by Coordinates
+
+GET /weather/coordinates?lat=28.6&lon=77.2&units=imperial
+
+### 🔹 5-Day Forecast (grouped into next 3 days)
+
+GET /weather/forecast?city=Mumbai&units=metric
+
+---
+
+### ✅ Sample JSON Response
+<pre>
+    {
+  "city": "Delhi",
+  "country": "IN",
+  "temperature": "34°C",
+  "description": "clear sky",
+  "humidity": "40%",
+  "windSpeed": "5.2 m/s",
+  "icon": "https://openweathermap.org/img/wn/01d@2x.png"
+}
+</pre>
+
+## 🛡️ Built-in Protections
+
+- **🔐 Rate Limiting** (express-rate-limit)
+- **🧠 Caching** (node-cache)  
+- **🔒 Secure Headers** (helmet) 
+- **🚨 Clean Error Handling**  
+- **📋 Request Logging** (morgan)
 
 ## 🔧 Technologies Used
 
 - **Node.js** + **Express.js**  
-- **Axios** for external API requests  
-- **Dotenv** for managing environment variables  
+- **Axios** for external API requests
+- **Node-Cache** for Lightweight in-memory cache
+- **Dotenv** for managing secret environment variables
+- **Morgan** for Dev-friendly request logs
+- **Helmet** for Adds security headers
 - **Postman** for API testing  
 - **OpenWeatherMap API**
 
@@ -35,16 +74,19 @@ Built as part of a backend internship project with a focus on:
 
 ## 🛠️ Project Structure
 ```
-weather-api-app/
+weatherify-backend/
 │
-├── index.js # Main backend file
-├── routes
-│ └── weather.js
-├── services
-│ └── weatherService.js 
-├── middleware
-│ └── logger.js
+├── index.js                # Entry point
+├── routes/
+│   └── weather.js          # All weather-related endpoints
+│   └── info.js             # Root/about routes
+├── services/
+│   └── weatherService.js   # API fetch + caching logic
+├── middleware/
+│   ├── logger.js           # Custom logger (deprecated by morgan)
+│   └── rateLimiter.js      # Global + per-route rate limits
 ├── .env # API key (ignored in Git)
+├── .env.example            # Sample env file
 ├── .gitignore
 ├── README.md
 ├── package.json
@@ -58,16 +100,16 @@ weather-api-app/
 
 ### Clone the repo 
 
-- git clone https://github.com/KhannaSahab16/Weather-API.git
-- cd Weather-API
+- git clone https://github.com/KhannaSahab16/weatherify-backend.git
+- cd weatherify-backend
 
 ### Install dependencies
 
 - npm install
 
-### Add your API key in .env
+### Create .env with your OpenWeatherMap key
 
-- OPENWEATHER_API_KEY=your_api_key_here
+- cp .env.example .env (Edit .env and paste your actual key)
 
 ### Start the server
 
@@ -107,20 +149,26 @@ GET /weather?city=CityName
 
 ## 🧠 Learnings & Highlights
 
-- Built a backend from scratch using Express.js
-- Worked with third-party APIs using Axios
-- Applied middleware for request logging
-- Secured API keys with .env
-- Tested APIs thoroughly using Postman
+- ✅ Deep dive into REST APIs & Express.js
+- ✅ Used third-party APIs with Axios
+- ✅ Designed clean backend structure
+- ✅ Implemented caching & rate limiting
+- ✅ Clean error-first approach
+- ✅ Practiced security with .env, Helmet
+- ✅ Realtime API testing in Postman
+- ✅ Full deploy flow with Render
 
 ---
 
 ## ✨ Future Improvements
 
-- Add a frontend interface (HTML + JS)
-- Extend API to show 5-day forecast
-- Add location autocomplete via Map APIs
-- Rate limiting, caching, and test coverage
+- Add a frontend interface (HTML + React)
+- Introduce authentication (JWT)
+- Add user-specific search history (DB)
+- Auto-refresh cache periodically
+- Dockerize for cloud-native deploy
 
-Author 
-Mehul Khanna
+👨‍💻 Author
+> Mehul Khanna – @KhannaSahab16
+> Built during backend internship (2025)
+> 💬 Feel free to fork, test, or contribute!
