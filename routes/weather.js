@@ -1,22 +1,19 @@
 const express = require("express");
 const router = express.Router();
-const { getCurrentWeather, getForecast } = require("../services/weatherService");
+const { getWeatherByCity, getForecast ,getWeatherByCoordinates } = require("../services/weatherService");
+const { groupForecastData } = require("../utils/parseForecast");
+const rateLimit = require("express-rate-limit");
+
 
 router.get("/", async (req, res) => {
   const city = req.query.city;
+  const units = req.query.units || 'metric';
+
   if (!city) return res.status(400).json({ error: "City name is required" });
 
   try {
-    const data = await getCurrentWeather(city);
-
-    res.json({
-      location: data.name,
-      country: data.sys.country,
-      temperature_celsius: data.main.temp,
-      condition: data.weather[0].description,
-      humidity: data.main.humidity,
-      wind_kph: data.wind.speed * 3.6,
-    });
+    const weatherData = await getWeatherByCity(city, units);
+    res.json(weatherData);
   } catch (error) {
     if (error.response?.status === 404) {
       return res.status(404).json({ error: "City not found" });
@@ -25,22 +22,46 @@ router.get("/", async (req, res) => {
   }
 });
 
-router.get("/forecast", async (req, res) => {
+const forecastLimiter = rateLimit({
+  windowMs: 10 * 60 * 1000, 
+  max: 20, 
+  message: {
+    error: "Too many forecast requests, slow down!"
+  }
+});
+router.get("/forecast" , forecastLimiter, async (req, res) => {
   const city = req.query.city;
+  const units = req.query.units || 'metric';
+
   if (!city) return res.status(400).json({ error: "City name is required" });
 
   try {
-    const data = await getForecast(city);
-    const forecast = data.list.slice(0, 3).map((entry) => ({
-      datetime: entry.dt_txt,
-      temperature: entry.main.temp,
-      condition: entry.weather[0].description,
-    }));
+    const data = await getForecast(city, units);
+    const groupedForecast = groupForecastData(data.list, units);
 
-    res.json({ city: data.city.name, forecast });
+    res.json({
+      city: data.city.name,
+      forecast: groupedForecast
+    });
   } catch (error) {
     res.status(500).json({ error: "Failed to fetch forecast", details: error.message });
   }
 });
+
+router.get("/coordinates", async (req, res) => {
+  const { lat, lon, units = "metric" } = req.query;
+
+  if (!lat || !lon) {
+    return res.status(400).json({ error: "Latitude and longitude are required" });
+  }
+
+  try {
+    const weatherData = await getWeatherByCoordinates(lat, lon, units);
+    res.json(weatherData);
+  } catch (error) {
+    res.status(500).json({ error: "Failed to fetch weather data", details: error.message });
+  }
+});
+
 
 module.exports = router;
