@@ -17,7 +17,6 @@ const app = express();
 app.use(express.json());
 app.use(rateLimiter);
 app.use(helmet());
-console.log("✅ Helmet security headers enabled");
 app.use(morgan("dev"));
 app.use(logger);
 
