@@ -26,7 +26,7 @@ function groupForecastData(list, units = "metric") {
       min: `${Math.min(...temps)}°${units === 'imperial' ? 'F' : 'C'}`,
       max: `${Math.max(...temps)}°${units === 'imperial' ? 'F' : 'C'}`,
       description: dominantDescription,
-      icon: `https://openweathermap.org/img/wn/${icons[0]}@2x.png` // could also pick most frequent
+      icon: `https://openweathermap.org/img/wn/${icons[0]}@2x.png` 
     });
   });
 
