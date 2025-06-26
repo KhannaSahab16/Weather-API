@@ -6,7 +6,7 @@ const limiter = rateLimit({
   message: {
     error: "Too many requests from this IP, please try again after an hour."
   },
-  standardHeaders: true, // Return rate limit info in headers
+  standardHeaders: true,
   legacyHeaders: false,
 });
 
